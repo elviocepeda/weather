@@ -1,0 +1,42 @@
+@media (min-width: 300px) and  (max-width: 450px) {
+  
+  .app {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .app-container {
+    width: 95%;
+    height: 95%;
+  }
+
+  .data {
+    font-size: 20px;
+  }
+
+  .data-description {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 380px) and  (max-width: 1024px) {
+  
+  .app {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .app-container {
+    width: 350px;
+    height: 90%;
+  }
+
+  .data {
+    font-size: 20px;
+  }
+
+  .data-description {
+    font-size: 15px;
+  }
+}
+
