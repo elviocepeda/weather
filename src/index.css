@@ -82,7 +82,7 @@ h1 {
 
 .app-container .top {
   width: 100%;
-  padding: 1em 1em 0;
+  padding: .5em 1em 1em;
 }
 
 .app-container .bottom {
