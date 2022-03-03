@@ -3,12 +3,13 @@ import axios from 'axios'
 import Search from './Search'
 import Top from './Top'
 import Bottom from './Bottom'
+import Loader from './Loader'
 
 function WeatherApp() {
 
   const rowStyle = {width:"33%", textAlign:"center"}
-  const [data, setData] = useState({})
-  const [error, setError] = useState({})
+  const [data, setData] = useState(null)
+  const [error, setError] = useState(null)
   const [isLoading, setIsLoading] = useState (true)
   const [location, setLocation] = useState('')
 
@@ -16,7 +17,7 @@ function WeatherApp() {
 
   const searchLocation = (e) => {
 
-    e.key === 'Enter' &&
+    if (e.key === 'Enter') {
       axios.get(url)
     
       .then((response) => {
@@ -28,22 +29,23 @@ function WeatherApp() {
         setError(error)
         setIsLoading(false)
       })
+    }
   }
 
   return (
     <div className="app-container">
-
       <Search 
         location={location}
         setLocation={setLocation}
         searchLocation={searchLocation}/>
       
-      <Top data={data}/>
-
-      <Bottom 
-        rowStyle={rowStyle}
-        data={data}/>
-
+      {data
+      ? <>
+          <Top data={data}/>
+          <Bottom rowStyle={rowStyle} data={data} />
+        </>
+      : <Loader/>}
+        
     </div>
   );
 }
