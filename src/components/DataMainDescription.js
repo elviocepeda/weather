@@ -4,7 +4,6 @@ import { Clouds } from '../svgicons/Clouds';
 import { Rain } from '../svgicons/Rain';
 
 export const DataMainDescription = (props) => {
-  console.log(props.data);
 
   return (
     <div>

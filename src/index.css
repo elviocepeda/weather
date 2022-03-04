@@ -131,3 +131,18 @@ svg {
   height: 60px;
   filter: drop-shadow(1px 1px 2px #000000d3);
 }
+
+.loading {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  margin-top: 3em;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
